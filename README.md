@@ -1,81 +1,108 @@
-Project Overview
+# 📊 Customer Behavior Analysis Dashboard
 
-This project analyzes customer shopping behavior using transactional data from 3,900 purchases across multiple product categories. The goal is to uncover insights into spending patterns, customer segmentation, product preferences, and subscription behavior to support data-driven business decisions.
+---
 
-Dataset Summary
-Total Records: 3,900
-Columns: 18
-Missing Values: 37 (in Review Rating)
-Key Features:
-Customer demographics (Age, Gender, Location, Subscription Status)
-Purchase details (Item, Category, Amount, Season, Size, Color)
-Shopping behavior (Discount, Promo Code, Frequency, Shipping Type)
+## 🚀 Project Overview
 
-Data Cleaning & Preparation (Python)
-Loaded dataset using pandas
-Handled missing values using median imputation by category
-Standardized column names to snake_case
-Feature Engineering:
-age_group
-purchase_frequency_days
-Removed redundant column: promo_code_used
-Integrated cleaned data into PostgreSQL
+This project analyzes customer shopping behavior to uncover meaningful insights about purchasing patterns, category trends, and customer preferences.
 
-SQL Analysis (Business Insights)
+The project includes a fully interactive **Streamlit dashboard** that allows users to explore data visually and make data-driven decisions.
 
-Performed advanced queries to extract insights:
+---
 
-Revenue comparison by gender
-High-spending customers using discounts
-Top 5 products by rating
-Shipping type vs spending (Express vs Standard)
-Subscribers vs Non-subscribers analysis
-Discount-dependent products
-Customer segmentation (New, Returning, Loyal)
-Top products per category
-Repeat buyers & subscription behavior
-Revenue by age group
+## 🎯 Why This Project?
 
-Key Insights
-Male customers generated ~2x more revenue than females
-Express shipping users spend slightly more on average
-Majority customers fall under the Loyal segment (3000+)
-Discounts significantly influence purchasing behavior
-Young adults contribute the highest revenue
+Understanding customer behavior is critical for businesses to:
 
-Power BI Dashboard
+* Increase sales 📈
+* Improve customer experience 👥
+* Optimize product placement 🛒
 
-An interactive dashboard was built to visualize:
+This project demonstrates how raw data can be transformed into actionable insights.
 
-Customer distribution
-Revenue trends
-Category-wise sales
-Subscription insights
-Age group analysis
+---
 
-Business Recommendations
-Boost subscriptions with exclusive benefits
-Implement customer loyalty programs
-Optimize discount strategies
-Focus marketing on high-revenue segments
-Promote top-rated & best-selling products
+## ✨ Key Features
 
-Tech Stack
-Python (Pandas, NumPy)
-SQL (PostgreSQL)
-Power BI
-Data Analysis & Visualization
+* 📊 Interactive dashboard using Streamlit
+* 🔍 Category-wise analysis
+* 👥 Customer segmentation insights
+* 💰 Spending behavior visualization
+* ⚡ Real-time filtering
 
-How to run
-# Clone the repository
+---
+
+## 🧰 Tech Stack
+
+| Category      | Tools                       |
+| ------------- | --------------------------- |
+| Language      | Python                      |
+| Data Analysis | Pandas, NumPy               |
+| Visualization | Plotly                      |
+| Dashboard     | Streamlit                   |
+| BI Tools      | Power BI                    |
+---
+
+## 📂 Project Structure
+
+```
+customer_behavior_analysis/
+│── data/                # Dataset
+│── notebooks/           # EDA & analysis
+│── app.py               # Streamlit app
+│── requirements.txt     # Dependencies
+│── README.md
+```
+
+---
+
+
+## ⚙️ Installation & Setup
+
+```bash
 git clone https://github.com/prince3113/customer_behavior_analysis.git
+cd customer_behavior_analysis
+pip install -r requirements.txt
+streamlit run app.py
+```
 
-# Install dependencies
-pip install pandas numpy
+---
 
-Project Files
-Dataset (CSV)
-Python Scripts
-SQL Queries
-Power BI Dashboard (.pbix)
-Project Report & PPT
+## 📊 Insights from the Project
+
+* Certain product categories dominate overall sales
+* Customer spending varies significantly across segments
+* Trends reveal opportunities for targeted marketing
+
+---
+
+## 🌍 Real-World Applications
+
+* 📢 Personalized marketing
+* 🛒 Recommendation systems
+* 📦 Inventory planning
+* 💡 Business intelligence dashboards
+
+---
+
+## 🔮 Future Enhancements
+
+* 🤖 Machine learning for prediction
+* 🌐 Deployment on Streamlit Cloud
+* 🎨 Enhanced UI/UX
+
+---
+
+## 👨‍💻 Author
+
+**Prince Sethia**
+
+🔗 GitHub: [https://github.com/prince3113](https://github.com/prince3113)
+
+🔗 Website: [https://customer-shopping-behavior.streamlit.app/]
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub!
