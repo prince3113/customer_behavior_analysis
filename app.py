@@ -26,11 +26,13 @@ df = load_data()
 st.sidebar.title("🔍 Filter")
 category = st.sidebar.multiselect(
     "Category",
-    df['Category'].unique()
+    options=df['Category'].unique(),
+    default=df['Category'].unique()
 )
 gender = st.sidebar.multiselect(
     "Gender",
-    df["Gender"].unique()
+    options=df["Gender"].unique(),
+    default=df["Gender"].unique()
 )
 age_range = st.sidebar.slider(
     "Age Range",
@@ -57,23 +59,27 @@ st.divider()
 
 # Charts
 
-col5,col6=st.columns(2)
+st.subheader("📈 Purchase by Age")
+fig = px.density_heatmap(
+filtered_df,
+x="Age",
+y="Purchase Amount (USD)",
+nbinsx=20,
+nbinsy=20,
+color_continuous_scale="Blues",
+template="plotly_dark"
+)
+fig.update_layout(
+width=300,
+height=500
+)
+st.plotly_chart(fig, use_container_width=True)
 
-with col5:
-    st.subheader("📈 Purchase by Age")
-    fig1 =px.scatter(
-        filtered_df,
-        x='Age',
-        y="Purchase Amount (USD)",
-        color="Gender"
-    )
-    st.plotly_chart(fig1,use_container_width=True)
 
-with col6:
-    st.subheader("🛒 Category Sales")
-    cat_data = filtered_df.groupby("Category")["Purchase Amount (USD)"].sum().reset_index()
-    fig2 = px.bar(cat_data, x="Category",y="Purchase Amount (USD)",color="Category")
-    st.plotly_chart(fig2,use_container_width=True)
+st.subheader("🛒 Category Sales")
+cat_data = filtered_df.groupby("Category")["Purchase Amount (USD)"].sum().reset_index()
+fig2 = px.bar(cat_data, x="Category",y="Purchase Amount (USD)",color="Category")
+st.plotly_chart(fig2,use_container_width=True)
 
 # Full Width
 st.subheader("📊 Purchase Distribution")
